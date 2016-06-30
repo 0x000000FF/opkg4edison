@@ -169,6 +169,7 @@ opkg_download(const char *src, const char *dest_file_name,
       argv[i++] = "-O";
       argv[i++] = tmp_file_location;
       argv[i++] = src;
+      argv[i++] = "> /tmp/wgetstate.log";
       argv[i++] = NULL;
       res = xsystem(argv);
 
