@@ -157,7 +157,7 @@ opkg_download(const char *src, const char *dest_file_name,
 #else
     {
       int res;
-      const char *argv[8];
+      const char *argv[10];
       int i = 0;
 
       argv[i++] = "wget";
@@ -169,7 +169,9 @@ opkg_download(const char *src, const char *dest_file_name,
       argv[i++] = "-O";
       argv[i++] = tmp_file_location;
       argv[i++] = src;
-      argv[i++] = "> /tmp/wgetstate.log";
+      argv[i++] = "-a";
+      argv[i++] = "/tmp/wgetstatus.log"
+      argv[i++] = "-b"
       argv[i++] = NULL;
       res = xsystem(argv);
 
